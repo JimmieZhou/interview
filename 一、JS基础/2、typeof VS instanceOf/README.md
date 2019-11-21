@@ -4,8 +4,9 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-21 14:54:05
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 14:58:19
+ * @LastEditTime: 2019-11-21 15:25:35
  -->
+ ### typeof
 typeof对于基本类型，除了null之外，都会正确返回各自类型
 ```javascript
 typeof 1 // 'number'
@@ -50,4 +51,17 @@ Object.prototype.toString.call([])
 ```javascript
 let abc
 abc === void 0; // true
+```
+### instanceOf
+如果我们想判断一个对象的正确类型，这时候可以考虑使用 instanceof，因为内部机制是通过原型链来判断的
+```javascript
+const Person = function() {}
+const p1 = new Person()
+p1 instanceof Person // true
+
+var str = 'hello world'
+str instanceof String // false
+
+var str1 = new String('hello world')
+str1 instanceof String // true
 ```
