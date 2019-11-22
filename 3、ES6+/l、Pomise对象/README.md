@@ -4,7 +4,7 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-22 14:37:44
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-22 15:08:40
+ * @LastEditTime: 2019-11-22 15:28:37
  -->
 ### 1、Promise 的含义
 
@@ -262,4 +262,84 @@ Promise.reject(3).then(() => {}, () => {})
 Promise.reject(3).finally(() => {})
 ```
 
+### 6、Promise.all()
+
+Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+```javascript
+const p = Promise.all([p1, p2, p3]);
+```
+
+p的状态由p1、p2、p3决定，分成两种情况。
+
+（1）只有p1、p2、p3的状态都变成fulfilled，p的状态才会变成fulfilled，此时p1、p2、p3的返回值组成一个数组，传递给p的回调函数。
+
+（2）只要p1、p2、p3之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会传递给p的回调函数。
+
+注意，如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法。
+
+```javascript
+const p1 = new Promise((resolve, reject) => {
+  resolve('hello');
+})
+.then(result => result)
+.catch(e => e);
+
+const p2 = new Promise((resolve, reject) => {
+  throw new Error('报错了');
+})
+.then(result => result)
+.catch(e => e);
+
+Promise.all([p1, p2])
+.then(result => console.log(result))
+.catch(e => console.log(e));
+// ["hello", Error: 报错了]
+```
+
+如果p2没有自己的catch方法，就会调用Promise.all()的catch方法。
+
+```javascript
+const p1 = new Promise((resolve, reject) => {
+  resolve('hello');
+})
+.then(result => result);
+
+const p2 = new Promise((resolve, reject) => {
+  throw new Error('报错了');
+})
+.then(result => result);
+
+Promise.all([p1, p2])
+.then(result => console.log(result))
+.catch(e => console.log(e));
+// Error: 报错了
+```
+
+### 7、Promise.race() 
+
+Promise.race()方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+```javascript
+const p = Promise.race([p1, p2, p3]);
+```
+
+上面代码中，只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给p的回调函数。
+
+下面是一个例子，如果指定时间内没有获得结果，就将 Promise 的状态变为reject，否则变为resolve。
+
+```javascript
+const p = Promise.race([
+  fetch('/resource-that-may-take-a-while'),
+  new Promise(function (resolve, reject) {
+    setTimeout(() => reject(new Error('request timeout')), 5000)
+  })
+]);
+
+p
+.then(console.log)
+.catch(console.error);
+```
+
+上面代码中，如果 5 秒之内fetch方法无法返回结果，变量p的状态就会变为rejected，从而触发catch方法指定的回调函数。
 
