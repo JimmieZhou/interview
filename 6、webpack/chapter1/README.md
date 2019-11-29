@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-29 15:00:04
- * @LastEditTime: 2019-11-29 16:18:21
+ * @LastEditTime: 2019-11-29 16:21:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interview\6、webpack\chapter1\README.md
@@ -9,7 +9,7 @@
 
 ## 基础篇：webpack 与构建发展简史
 
-### 为什什么需要构建⼯工具？
+### 为什什么需要构建工具？
 
 - 转换 ES6 语法
 - 转换 JSX
