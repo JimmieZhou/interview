@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-29 16:24:03
- * @LastEditTime: 2019-11-29 17:39:43
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2019-12-01 16:41:59
+ * @LastEditors: jimmiezhou
  * @Description: In User Settings Edit
  * @FilePath: \interview\6、webpack\chapter3\README.md
  -->
@@ -412,3 +412,42 @@ module.exports = {
 +  plugins: [new webpack.optimize.ModuleConcatenationPlugin()]
 };
 ```
+
+### 代码分割的意义
+
+对于⼤大的 Web 应⽤用来讲，将所有的代码都放在⼀一个⽂文件中显然是不不够有效的，特别是当你的 某些代码块是在某些特殊的时候才会被使⽤用到。webpack 有⼀一个功能就是将你的代码库分割成 chunks(语块)，当代码运⾏行行到需要它们的时候再进⾏行行加载。
+
+适⽤用的场景:
+
+抽离相同代码到⼀一个共享块
+
+脚本懒加载，使得初始下载的代码更更⼩小
+
+![alt 属性文本](./images/7.jpg)
+
+### 懒加载 JS 脚本的⽅方式
+
+CommonJS:require.ensure
+
+ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
+
+### 如何使⽤用动态 import?
+
+安装 babel 插件
+
+npm install @babel/plugin-syntax-dynamic-import --save-dev
+
+ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
+
+```javascript
+{
+"plugins": ["@babel/plugin-syntax-dynamic-import"],
+... }
+```
+
+### 代码分割的效果
+
+![alt 属性文本](./images/8.jpg)
+
+
+
