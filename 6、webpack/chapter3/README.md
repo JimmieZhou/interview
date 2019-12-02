@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-29 16:24:03
- * @LastEditTime: 2019-12-01 16:41:59
+ * @LastEditTime: 2019-12-02 09:33:33
  * @LastEditors: jimmiezhou
  * @Description: In User Settings Edit
  * @FilePath: \interview\6、webpack\chapter3\README.md
@@ -449,5 +449,19 @@ ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
 
 ![alt 属性文本](./images/8.jpg)
 
+### ESLint 的必要性
+
+
+### ⾏业⾥面优秀的 ESLint 规范实践
+
+Airbnb: eslint-config-airbnb、 eslint-config-airbnb-base
+
+### ESLint 如何执⾏行行落地?
+
+和 CI/CD 系统集成 
+
+和 webpack 集成
+
+### ⽅案一:webpack 与 CI/CD 集成
 
 
