@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-29 16:24:03
- * @LastEditTime: 2019-12-02 09:33:33
- * @LastEditors: jimmiezhou
+ * @LastEditTime: 2019-12-02 10:16:38
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interview\6、webpack\chapter3\README.md
  -->
@@ -451,17 +451,326 @@ ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
 
 ### ESLint 的必要性
 
-
 ### ⾏业⾥面优秀的 ESLint 规范实践
 
 Airbnb: eslint-config-airbnb、 eslint-config-airbnb-base
 
 ### ESLint 如何执⾏行行落地?
 
-和 CI/CD 系统集成 
+和 CI/CD 系统集成
 
 和 webpack 集成
 
 ### ⽅案一:webpack 与 CI/CD 集成
 
+![alt 属性文本](./images/9.jpg)
+
+### 本地开发阶段增加 precommit 钩⼦
+
+安装 husky
+
+npm install husky --save-dev
+
+增加 npm script，通过 lint-staged 增量检查修改的⽂件
+
+```javascript
+"scripts": {
+  "precommit": "lint-staged"
+},
+"lint-staged": {
+  "linters": {
+    "*.{js,scss}": ["eslint --fix", "git add"]
+  }
+}
+```
+
+### ⽅案⼆：webpack 与 ESLint 集成
+
+使⽤ eslint-loader，构建时检查 JS 规范
+
+```javascript
+module.exports = {
+module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+          "babel-loader", 
+  +        "eslint-loader"
+        ]
+      }
+    ]
+ }
+};
+```
+
+### webpack 打包库和组件
+
+webpack 除了可以⽤来打包应⽤，也可以⽤来打包 js 库
+
+实现⼀个⼤整数加法库的打包
+
+- 需要打包压缩版和⾮压缩版本
+- ⽀持 AMD/CJS/ESM 模块引
+
+### 库的⽬录结构和打包要求
+
+打包输出的库名称
+
+- 未压缩版 large-number.js
+- 压缩版 large-number.min.js
+
+```javascript
++ |- /dist
++ |- large-number.js
++ |- large-number.min.js
++ |- webpack.config.js
++ |- package.json
++ |- index.js
++ |- /src
++ |- index.js
+```
+
+### ⽀持的使⽤⽅式
+
+⽀持 ES module
+
+⽀持 CJS
+
+⽀持 AMD
+
+```javascript
+import * as largeNumber from 'large-number';
+// ...
+largeNumber.add('999', '1');
+const largeNumbers = require('large-number');
+// ...
+largeNumber.add('999', '1');
+require(['large-number'], function (large-number) {
+// ...
+largeNumber.add('999', '1');
+});
+```
+
+### ⽀持的使⽤⽅式
+
+可以直接通过 script 引⼊
+
+```html
+<!doctype html>
+<html>
+...
+<script src="https://unpkg.com/large-number"></script>
+<script>
+// ...
+// Global variable
+largeNumber.add('999', '1');
+// Property in the window object
+window. largeNumber.add('999', '1');
+// ...
+</script>
+</html>
+```
+
+### 如何将库暴露出去？
+
+library: 指定库的全局变量
+
+libraryTarget: ⽀持库引⼊的⽅式
+
+```javascript
+module.exports = {
+  mode: "production",
+  entry: {
+    "large-number": "./src/index.js",
+    "large-number.min": "./src/index.js"
+  },
+  output: {
+    filename: "[name].js",
+    library: "largeNumber",
+    libraryExport: "default",
+    libraryTarget: "umd"
+  }
+}
+```
+
+### 如何指对 .min 压缩
+
+通过 include 设置只压缩 min.js 结尾的⽂件
+
+```javascript
+module.exports = {
+  mode: "none",
+  entry: {
+    "large-number": "./src/index.js",
+    "large-number.min": "./src/index.js"
+  },
+  output: {
+    filename: "[name].js",
+    library: "largeNumber",
+    libraryTarget: "umd"
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({include: /\.min\.js$/}),
+    ],
+  }
+};
+```
+
+### 设置⼊⼝⽂件
+
+package.json 的 main 字段为 index.js
+
+```javascript
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./dist/large-number.min.js");
+} else {
+  module.exports = require("./dist/large-number.js");
+}
+```
+
+### ⻚⾯打开过程
+
+![alt 属性文本](./images/10.jpg)
+
+### 服务端渲染 (SSR) 是什么？
+
+渲染: HTML + CSS + JS + Data -> 渲染后的 HTML
+
+服务端：
+
+- 所有模板等资源都存储在服务端
+- 内⽹机器拉取数据更快
+- ⼀个 HTML 返回所有数据
+
+### 浏览器和服务器交互流程
+
+![alt 属性文本](./images/11.jpg)
+
+### 客户端渲染 vs 服务端渲染
+
+![alt 属性文本](./images/12.jpg)
+
+总结：服务端渲染 (SSR) 的核⼼是减少请求
+
+### SSR 的优势
+
+- 减少⽩屏时间
+- 对于 SEO 友好
+
+### SSR 代码实现思路
+
+服务端
+
+- 使⽤ react-dom/server 的 renderToString ⽅法将React 组件渲染成字符串
+- 服务端路由返回对应的模板
+
+客户端
+
+- 打包出针对服务端的组件
+
+![alt 属性文本](./images/13.jpg)
+
+### webpack ssr 打包存在的问题
+
+#### 浏览器的全局变量 (Node.js 中没有 document, window)
+
+- 组件适配：将不兼容的组件根据打包环境进⾏适配
+- 请求适配：将 fetch 或者 ajax 发送请求的写法改成 isomorphic-fetch 或者 axios
+
+#### 样式问题 (Node.js ⽆法解析 css) 
+
+- ⽅案⼀：服务端打包通过 ignore-loader 忽略掉 CSS 的解析
+- ⽅案⼆：将 style-loader 替换成 isomorphic-style-loader
+
+### 如何解决样式不显示的问题？
+
+使⽤打包出来的浏览器端 html 为模板
+
+设置占位符，动态插⼊组件
+
+![alt 属性文本](./images/14.jpg)
+
+### ⾸屏数据如何处理？
+
+- 服务端获取数据
+- 替换占位符
+
+![alt 属性文本](./images/15.jpg)
+
+### 当前构建时的⽇志显示
+
+展示⼀⼤堆⽇志，很多并不需要开发者关注
+
+### 统计信息 stats
+
+![alt 属性文本](./images/16.jpg)
+
+### 如何优化命令⾏的构建⽇志
+
+使⽤ friendly-errors-webpack-plugin，stats 设置成 errors-only
+
+- success: 构建成功的⽇志提示
+- warning: 构建警告的⽇志提示
+- error: 构建报错的⽇志提示
+
+```javascript
+module.exports = {
+  entry: {
+    app: './src/app.js',
+    search: './src/search.js'
+  },
+  output: {
+    filename: '[name][chunkhash:8].js',
+    path: __dirname + '/dist'
+  },
+  plugins: [
++    new FriendlyErrorsWebpackPlugin()
+  ],
++    stats: 'errors-only'
+};
+```
+
+### 使⽤效果
+
+![alt 属性文本](./images/17.jpg)
+
+### 如何判断构建是否成功？
+
+在 CI/CD 的 pipline 或者发布系统需要知道当前构建状态
+
+每次构建完成后输⼊ echo $? 获取错误码
+
+### 构建异常和中断处理
+
+webpack4 之前的版本构建失败不会抛出错误码 (error code)
+
+Node.js 中的 process.exit 规范
+
+- 0 表示成功完成，回调函数中，err 为 null
+- ⾮ 0 表示执⾏失败，回调函数中，err 不为 null，err.code 就是传给 exit 的数字
+
+### 如何主动捕获并处理构建错误？
+
+compiler 在每次构建结束后会触发 done 这 个 hook
+
+process.exit 主动处理构建报错
+
+```javascript
+plugins: [
+  function() {
+    this.hooks.done.tap('done', (stats) => {
+      if (stats.compilation.errors && 
+        stats.compilation.errors.length && process.argv.indexOf('- -watch') == -1)
+      {
+        console.log('build error');
+        process.exit(1);
+      }
+    })
+  }
+]
+```
 
