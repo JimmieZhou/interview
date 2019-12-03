@@ -4,11 +4,9 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-25 09:06:47
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-03 14:19:42
+ * @LastEditTime: 2019-12-03 14:35:08
  -->
 收集部分有价值的react面试题型
-
-[React 开发必须知道的 34 个技巧【近1W字】](https://juejin.im/post/5dcb5a80e51d4520db19b906)
 
 [深入理解React高阶组件](https://www.html.cn/archives/9462)
 
