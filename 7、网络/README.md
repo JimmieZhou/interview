@@ -4,6 +4,6 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-25 08:59:14
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-25 08:59:24
+ * @LastEditTime: 2019-12-03 16:35:24
  -->
-整理中...
+[WebSocket 原理浅析与实现简单聊天](https://juejin.im/post/5dd4b991e51d450818244c30)
