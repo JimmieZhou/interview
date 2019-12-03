@@ -4,7 +4,7 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-25 09:06:47
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-03 17:27:56
+ * @LastEditTime: 2019-12-03 17:56:19
  -->
 
 ### React专题
@@ -22,8 +22,6 @@
 [如何对 React 函数式组件进行优化](https://juejin.im/post/5dd337985188252a1873730f)
 
 [21 个 React 性能优化技巧](https://www.infoq.cn/article/KVE8xtRs-uPphptq5LUz)
-
-[浅谈React性能优化的方向](https://juejin.im/post/5d045350f265da1b695d5bf2#heading-0)
 
 ### React深入
 
