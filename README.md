@@ -4,7 +4,7 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-21 14:24:18
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-04 11:00:32
+ * @LastEditTime: 2019-12-04 16:21:44
  -->
 # interview
 系统整理前端知识体系
@@ -32,4 +32,6 @@
 [【周刊-2】三年大厂面试官-前端面试题（偏难）](https://juejin.im/post/5cb0315f518825215e61ec14)
 
 [面试分享：两年工作经验成功面试阿里P6总结](https://juejin.im/post/5d690c726fb9a06b155dd40d)
+
+[面试资源汇总](https://github.com/abc-club/free-resources/blob/master/INTERVIEW.md)
 
