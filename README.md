@@ -4,12 +4,12 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-21 14:24:18
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-04 10:59:21
+ * @LastEditTime: 2019-12-04 11:00:32
  -->
 # interview
 系统整理前端知识体系
  
-![alt 属性文本](./InterviewMapMind.png) 
+![](./InterviewMapMind.png) 
 
 ## 面试好文
 
