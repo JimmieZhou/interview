@@ -4,7 +4,7 @@
  * @Author: jimmiezhou
  * @Date: 2019-11-25 09:06:47
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-03 17:56:19
+ * @LastEditTime: 2019-12-04 13:46:48
  -->
 
 ### React专题
@@ -12,10 +12,6 @@
 [你真的理解setState吗](https://juejin.im/post/5b45c57c51882519790c7441)
 
 [深入理解React高阶组件](https://www.html.cn/archives/9462)
-
-[Deep In React 之浅谈 React Fiber 架构（一）](https://juejin.im/post/5d12c907f265da1b6d4033c5)
-
-[Deep In React 之详谈 React 16 Diff 策略(二)](https://juejin.im/post/5d3e3231e51d4510926a7c39)
 
 [性能！！让你的 React 组件跑得再快一点](https://juejin.im/post/5ddde1c15188257a0d22ae1e)
 
