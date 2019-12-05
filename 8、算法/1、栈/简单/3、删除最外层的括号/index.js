@@ -4,12 +4,13 @@
  * @Author: jimmiezhou
  * @Date: 2019-12-05 13:45:22
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-05 13:45:32
+ * @LastEditTime: 2019-12-05 13:49:48
  */
-var removeOuterParentheses = function(S) {
+var removeOuterParentheses = function (S) {
     let stack = []
     let result = ''
     let index = 0
+    // (()()())(())  ()()()()
     for (let i = 0; i < S.length; i++) {
         if (S[i] === '(') stack.push('(')
         else stack.pop()
