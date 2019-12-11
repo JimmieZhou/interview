@@ -4,7 +4,7 @@
  * @Author: jimmiezhou
  * @Date: 2019-12-10 11:13:15
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-10 11:18:11
+ * @LastEditTime: 2019-12-11 15:59:04
  */
 
 /**
@@ -31,7 +31,6 @@ var inorderTraversal = function(root) {
     var result = [];
     function pushRoot(root){
         if(root != null){
-            
             if(root.left != null){
                 pushRoot(root.left);
             }
