@@ -3,11 +3,13 @@
  * @version: 1.0.0
  * @Author: jimmiezhou
  * @Date: 2019-11-25 08:59:14
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-09 10:57:47
+ * @LastEditors  : jimmiezhou
+ * @LastEditTime : 2019-12-23 23:04:22
  -->
-这是一个完整的webpack4从入门到精通的系统教程。让我们开始吧!!!
 
+这是系统整理的一部webpack4系统教程。内容很丰富，很有营养。欢迎各位star✨✨✨
+
+也可以查看本人长期维护的[这篇](https://github.com/JimmieZhou/my-webpack)webpack4教程
 
 ### 涉及的loader和plugin
 
