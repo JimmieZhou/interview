@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: 
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 15:45:02
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 15:53:06
- -->
 当我们创建一个对象时 let obj = { age: 25 }，我们可以发现能使用很多种函数，但是我们明明没有定义过它们，对于这种情况你是否有过疑惑？
   
 ![alt 属性文本](./1.jpg)  

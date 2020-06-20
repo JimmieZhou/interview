@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: js主句类型
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 14:31:15
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 15:22:57
- -->
 总共7种内置类型：6种基本数据类型和对象类型 
 ### 原始（Primitive）类型 
 6种基本类型：
@@ -18,6 +10,7 @@
 ```javascript
 typeof NaN // 'number'
 NaN === NaN // false
+typeof null // object
 ```
 ### 对象（Object）类型
   在 JS 中，除了原始类型那么其他的都是对象类型了。对象类型和原始类型不同的是，原始类型存储的是值，对象类型存储的是地址（指针）。当你创建了一个对象类型的时候，计算机会在内存中帮我们开辟一个空间来存放值，但是我们需要找到这个空间，这个空间会拥有一个地址（指针）。  

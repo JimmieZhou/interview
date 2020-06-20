@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: 
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 15:56:53
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 16:03:17
- -->
 this 是很多人会混淆的概念，但是其实它一点都不难，只是网上很多文章把简单的东西说复杂了。在这一小节中，你一定会彻底明白 this 这个概念的。
 
 ```javascript
@@ -13,13 +5,13 @@ function foo() {
   console.log(this.a)
 }
 var a = 1
-foo() // -> window
+foo() // -> window  1
 
 const obj = {
   a: 2,
   foo: foo
 }
-obj.foo() // -> obj
+obj.foo() // -> obj  2
 
 const c = new foo() // -> c
 ```

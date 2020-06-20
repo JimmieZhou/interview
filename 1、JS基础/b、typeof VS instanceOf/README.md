@@ -1,12 +1,4 @@
-<!--
- * @Descripttion: 
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 14:54:05
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 15:25:35
- -->
- ### typeof
+### typeof
 typeof对于基本类型，除了null之外，都会正确返回各自类型
 ```javascript
 typeof 1 // 'number'

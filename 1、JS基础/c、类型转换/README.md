@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: 
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 15:28:28
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 15:36:32
- -->
 ### 转为boolean
 除了 0、-0、""、undefined、null、false、NaN以外的，都转为true  
 ### 对象转为基本类型
