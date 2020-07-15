@@ -88,3 +88,14 @@ PI // 3.1415
 PI = 3;
 // TypeError: Assignment to constant variable.
 ```
+
+```js
+function freeze(obj){
+  Object.freeze(obj)
+  Object.keys(obj).forEach(key=>{
+    if(typeof obj[key] === 'object){
+      freeze(obj[key])
+    }
+  })
+}
+```
