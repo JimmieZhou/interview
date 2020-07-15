@@ -201,5 +201,71 @@ flatMap()方法对原数组的每个成员执行一个函数（相当于执行Ar
 // [2, 4, 3, 6, 4, 8]
 ```
 
+### 10.ES5中数组常用方法
+- concat，连接两个或更多的数组，并返回结果
+```js
+var arr1 = ['a', 'b']
+var arr2 = ['c', 'd']
+var arr3 = ['e', 'f']
+var ret1 = arr1.concat(arr2) // ['a', 'b','c', 'd']
+var ret2 = arr1.concat(arr2, arr3) // ['a', 'b','c', 'd', 'e', 'f']
+```
+- join，把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+```js
+var ret = [1, 2, 3].join("-") // 1-2-3
+```
+- pop，删除并返回数组的最后一个元素
+```js
+var arr = ['a', 'b', 'c']
+var ret = arr.pop()
+ret // 'c'
+arr // ['a', 'b']
+```
+- push，向数组的末尾添加一个或更多元素，并返回新的长度。
+```js
+var arr = ['a', 'b', 'c']
+var ret = arr.push('d')
+ret // 4
+arr // ['a', 'b', 'c', 'd']
+```
+- reverse，颠倒数组中元素的顺序，并返回新数组
+```js
+var arr = ['a', 'b', 'c']
+var ret = arr.reverse() // ['c', 'b', 'a']
+```
+- shift，删除并返回数组的第一个元素
+```js
+var arr = ['a', 'b', 'c']
+var ret = arr.shift() // 'a'
+arr // ['b', 'c']
+```
+- slice，从某个已有的数组返回选定的元素
+```js
+var arr = ['a', 'b', 'c', 'd']
+var ret = arr.slice(0, 2) // ['a', 'b']
+```
+- sort，对数组的元素进行排序
+- splice，删除元素，并向数组添加新元素。该方法会改变原数组
+语法：arrayObject.splice(index,howmany,item1,.....,itemX)
+```js
+// 添加
+var arr = ['a', 'b', 'c', 'd']
+arr.splice(1, 0, 'e')
+arr // ['a', 'e', 'b', 'c', 'd']
+// 删除
+var arr = ['a', 'b', 'c', 'd']
+arr.splice(1, 1)
+arr // ['a', 'c', 'd']
+// 修改
+var arr = ['a', 'b', 'c', 'd']
+arr.splice(1, 1, 'e')
+arr // ['a', 'e', 'c', 'd']
+```
+- unshift，向数组的开头添加一个或更多元素，并返回新的长度。
+```js
+var arr = ['a', 'b', 'c']
+var ret = arr.unshift('d') // 4
+arr // ['d', 'a', 'b', 'c']
+```
 
 
