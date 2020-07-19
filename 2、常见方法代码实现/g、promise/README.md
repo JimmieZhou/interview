@@ -60,3 +60,6 @@ MyPromise.prototype.then = function (onFulfilled, onRejected) {
   }
 }
 ```
+
+promise实现参考
+https://juejin.im/post/5c88e427f265da2d8d6a1c84
