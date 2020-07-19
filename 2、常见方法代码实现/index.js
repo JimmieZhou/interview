@@ -151,3 +151,44 @@ setTimeout(() => {
   }
   loop();
 }, 0);
+
+function Parent(value) {
+  this.value = value;
+}
+Parent.prototype.getVal = function () {
+  console.log(this.value);
+};
+function Child(value) {
+  Parent.call(this, value);
+}
+Child.prototype = new Parent();
+Child.prototype.constuctor = Child;
+
+function Parent(value) {
+  this.value = value;
+}
+Parent.prototype.getValue = function () {
+  console.log(this.value);
+};
+function Child(value) {
+  Parent.call(this, value);
+}
+Child.prototype = Object.create(Parent.prototype, {
+  value: Child,
+  enumable: false,
+  whitable: true,
+  configurable: true,
+});
+
+function lazyload() {
+  var height = window.innerHeight || document.documentElement.clientHeight;
+  var imgs = document.getElementsByTagName("img");
+  var count = 0;
+  for (var i = count; i < imgs.length; i++) {
+    var distance = height - imgs[i].getBoundingClientRect().top;
+    if (distance > 0 && !imgs[i].src) {
+      imgs[i].src = imgs[i].getAttribute("data-src");
+      count = i + 1;
+    }
+  }
+}
