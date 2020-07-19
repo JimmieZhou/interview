@@ -25,6 +25,7 @@ setTimeout(() => {
     }
     ul.append(fragment)
     countOfRender++
+    loop();
   }
   function loop() {
     if (countOfRender < times) {
