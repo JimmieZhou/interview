@@ -51,3 +51,5 @@ console.log(p2)
 
 ![alt 属性文本](./1.jpg)  
 所以最后 person 拥有了一个新的地址（指针），也就和 p1 没有任何关系了，导致了最终两个变量的值是不相同的。
+
+https://github.com/ljianshu/Blog/issues/4

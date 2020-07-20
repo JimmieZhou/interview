@@ -29,3 +29,5 @@
 - Function 是所有函数的爸爸，所有函数都可以通过 __proto__ 找到它
 - 函数的 prototype 是一个对象
 - 对象的 __proto__ 属性指向原型， __proto__ 将对象和原型连接起来组成了原型链
+
+https://github.com/ljianshu/Blog/issues/18

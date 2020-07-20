@@ -52,3 +52,5 @@ fn.bind().bind(a)() // => window
 下面用一张图来概括千言万语吧
 
 ![alt 属性文本](./1.jpg) 
+
+https://github.com/ljianshu/Blog/issues/7

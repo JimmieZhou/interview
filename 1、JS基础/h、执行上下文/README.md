@@ -37,3 +37,6 @@ function b() {
 }
 var b = 'Hello world'
 ```
+
+https://github.com/ljianshu/Blog/issues/59
+https://github.com/ljianshu/Blog/issues/60

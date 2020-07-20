@@ -29,3 +29,5 @@ let a = {
 1 + a // => 3
 '1' + a // => '12'
 ```
+
+https://github.com/ljianshu/Blog/issues/1

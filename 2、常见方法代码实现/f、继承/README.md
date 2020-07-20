@@ -91,3 +91,5 @@ child instanceof Parent // true
 class 实现继承的核心在于使用 extends 表明继承自哪个父类，并且在子类构造函数中必须调用 super，因为这段代码可以看成 Parent.call(this, value)。
 
 当然了，之前也说了在 JS 中并不存在类，class 的本质就是函数。
+
+https://github.com/ljianshu/Blog/issues/20
