@@ -135,3 +135,5 @@ mc.addEventListener('message', event => {
   }
 })
 ```
+参考：
+https://github.com/ljianshu/Blog/issues/55
