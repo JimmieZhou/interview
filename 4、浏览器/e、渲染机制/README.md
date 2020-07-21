@@ -6,6 +6,4 @@
  * @LastEditors: jimmiezhou
  * @LastEditTime: 2019-11-22 16:36:36
  -->
-https://github.com/ljianshu/Blog/issues/51
-
-https://github.com/sundway/blog/issues/2
+https://juejin.im/post/5ca0c0abe51d4553a942c17d
