@@ -9,24 +9,25 @@
 
 ## 基础篇：webpack 与构建发展简史
 
-### 为什什么需要构建工具？
+### 为什么需要构建工具？
 
-- 转换 ES6 语法
-- 转换 JSX
-- CSS 前缀补全/预处理理器器
+- 转换ES6语法
+- 转换JSX
+- CSS前缀补全/预处理器
 - 压缩混淆
-- ES6 module 主流浏览器器⽀支持情况图⽚片压缩
+- ES6 module 
+- 主流浏览器支持情况图片压缩
 
-### 为什什么选择 webpack?
+### 为什么选择 webpack?
 
-- 社区⽣生态丰富
+- 社区生态丰富
 - 配置灵活和插件化扩展
-- 官⽅方更更新迭代速度快
+- 官⽅更新迭代速度快
 
-### 初识 webpack：配置⽂文件名称
+### 初识 webpack：配置⽂件名称
 
-- webpack 默认配置⽂文件：webpack.config.js
-- 可以通过 webpack --config 指定配置⽂文件
+- webpack默认配置⽂件：webpack.config.js
+- 可以通过 webpack --config 指定配置文件
 
 ### 初识 webpack：webpack 配置组成
 
@@ -73,10 +74,10 @@ module.exports = {
 - npm install webpack webpack-cli --save-dev
 - 检查是否安装成功：./node_modules/.bin/webpack -v
 
-### Webpack 初体验：⼀个最简单的例例⼦子
+### Webpack 初体验：⼀个最简单的例子
 
 ![alt 属性文本](./images/1.jpg)
 
-### 通过 npm script 运⾏行行 webpack
+### 通过 npm script 运行 webpack
 
 ![alt 属性文本](./images/2.jpg)
