@@ -415,13 +415,13 @@ module.exports = {
 
 ### 代码分割的意义
 
-对于⼤大的 Web 应⽤用来讲，将所有的代码都放在⼀一个⽂文件中显然是不不够有效的，特别是当你的 某些代码块是在某些特殊的时候才会被使⽤用到。webpack 有⼀一个功能就是将你的代码库分割成 chunks(语块)，当代码运⾏行行到需要它们的时候再进⾏行行加载。
+对于⼤的 Web 应⽤来讲，将所有的代码都放在一个文件中显然是不够有效的，特别是当你的某些代码块是在某些特殊的时候才会被使用到。webpack 有一个功能就是将你的代码库分割成 chunks(语块)，当代码运行到需要它们的时候再进⾏加载。
 
 适⽤用的场景:
 
-抽离相同代码到⼀一个共享块
+抽离相同代码到⼀个共享块
 
-脚本懒加载，使得初始下载的代码更更⼩小
+脚本懒加载，使得初始下载的代码更小
 
 ![alt 属性文本](./images/7.jpg)
 
@@ -429,7 +429,7 @@ module.exports = {
 
 CommonJS:require.ensure
 
-ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
+ES6:动态 import(⽬前还没有原生支持，需要 babel 转换)
 
 ### 如何使⽤用动态 import?
 
@@ -437,7 +437,7 @@ ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
 
 npm install @babel/plugin-syntax-dynamic-import --save-dev
 
-ES6:动态 import(⽬目前还没有原⽣生⽀支持，需要 babel 转换)
+ES6:动态 import(⽬前还没有原生支持，需要 babel 转换)
 
 ```javascript
 {
