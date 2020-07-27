@@ -49,3 +49,42 @@ function merge(nums1, m, nums2, n) {
   }
   return nums1;
 }
+
+// 三、3数求和问题
+function threeSum(nums) {
+  const ret = [];
+  nums = nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length - 2; i++) {
+    // 左指针
+    let j = i + 1;
+    // 右指针
+    let k = nums.length - 1;
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue;
+    }
+    while (j < k) {
+      if (nums[i] + nums[j] + nums[k] < 0) {
+        j++;
+        while (j < k && nums[j] === nums[j - 1]) {
+          j++;
+        }
+      } else if (nums[i] + nums[j] + nums[k] > 0) {
+        k--;
+        while (j < k && nums[k] === nums[k + 1]) {
+          k--;
+        }
+      } else {
+        ret.push([nums[i], nums[j], nums[k]]);
+        j++;
+        k--;
+        while (j < k && nums[j] === nums[j - 1]) {
+          j++;
+        }
+        while (j < k && nums[k] === nums[k + 1]) {
+          k--;
+        }
+      }
+    }
+  }
+  return ret;
+}
