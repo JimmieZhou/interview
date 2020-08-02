@@ -1,12 +1,3 @@
-<!--
- * @Descripttion: 
- * @version: 1.0.0
- * @Author: jimmiezhou
- * @Date: 2019-11-21 17:02:44
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-11-21 17:03:20
- -->
-``` javascript
 //Promise/A+规定的三种状态
 const PENDING = "pending";
 const FULFILLED = "fulfilled";
@@ -173,6 +164,23 @@ class MyPromise {
     });
   }
 }
-```
-原文地址：
-https://juejin.im/post/6844904096525189128#heading-0
+
+const p1 = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(1);
+  }, 500);
+});
+
+p1.then((res) => {
+  console.log(res);
+  return 2;
+})
+  .then((res) => {
+    console.log(res);
+    return 3;
+  })
+  .then((res) => {
+    console.log(res);
+  });
+
+//输出 1 2 3
