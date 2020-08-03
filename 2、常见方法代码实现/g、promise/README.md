@@ -174,5 +174,6 @@ class MyPromise {
   }
 }
 ```
+问题：promise实现取消
 原文地址：
 https://juejin.im/post/6844904096525189128#heading-0
