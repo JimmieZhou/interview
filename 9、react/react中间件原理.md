@@ -169,5 +169,4 @@ const compose = (...funcs) => (result) => {
 }
 ```
 
-
 这种写法就更容易理解为什么compose(f, g, h)(...args)效果等同于 f(g(h(...args)))，但是就没有上面那种优雅😂。
