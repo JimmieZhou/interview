@@ -1,5 +1,5 @@
 // 实现 Storage class
-class StorageBase {
+class Storage {
     static getInstance() {
         if (!Storage.instance) {
             Storage.instance = new Storage()
