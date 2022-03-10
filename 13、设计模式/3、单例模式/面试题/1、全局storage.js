@@ -1,5 +1,5 @@
-// 实现 Storage
-class Storage {
+// 实现 Storage class
+class StorageBase {
     static getInstance() {
         if (!Storage.instance) {
             Storage.instance = new Storage()
@@ -24,3 +24,28 @@ console.log(storage1.getItem('name'))
 console.log(storage2.getItem('name'))
 
 
+// 闭包
+function StorageBase() { }
+StorageBase.prototype.setItem = function (key, value) {
+    return localStorage.setItem(key, value)
+}
+StorageBase.prototype.getItem = function (key) {
+    return localStorage.getItem(key)
+}
+const Storage = (function () {
+    let instance = null
+    return function () {
+        if (!instance) {
+            instance = new StorageBase()
+        }
+        return instance
+    }
+})()
+
+const storage3 = new Storage()
+const storage4 = new Storage()
+storage3.setItem('name', 'abc')
+
+console.log(storage3 === storage4)
+console.log(storage3.getItem('name'))
+console.log(storage4.getItem('name'))
