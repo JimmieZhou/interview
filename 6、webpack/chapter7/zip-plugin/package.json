@@ -17,6 +17,6 @@
     "yazl": "^2.5.1"
   },
   "dependencies": {
-    "jszip": "^3.2.2"
+    "jszip": "^3.7.0"
   }
 }
